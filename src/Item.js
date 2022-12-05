@@ -2,8 +2,8 @@ import React from "react";
 
 export default class Item extends React.PureComponent {
     render(){
-        const {onItemClick} = this.props
-        const {id,name,checked} = this.props.item
+        const {item,onItemClick} = this.props
+        const {id,name,checked}  = item
         console.log(`=> Item:  ${checked?'*':'-'} #${id} ${name}`)
 
         return (

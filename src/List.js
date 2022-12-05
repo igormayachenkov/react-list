@@ -1,5 +1,6 @@
 import React from "react";
-import Item from "./Item"
+import Item from "./Item";
+import DataContext from "./DataContext";
 
 const columns = {
     checked :{name:"Ch",    compare:(a,b)=>a.checked-b.checked},
@@ -8,6 +9,8 @@ const columns = {
 }
 
 export default class List extends React.PureComponent{
+    static contextType = DataContext
+
     constructor(props){
         super(props)
         this.state = {
@@ -24,7 +27,7 @@ export default class List extends React.PureComponent{
     
     render(){
         const {sortby} = this.state
-        const {list,onItemClick} = this.props
+        const {list, onItemClick} = this.context
         console.log(`=> List, sortby:${sortby}`)
 
         return (
