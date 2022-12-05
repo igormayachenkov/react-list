@@ -1,9 +1,9 @@
 import React,{useContext} from "react";
 import logo from './logo.svg';
-import DataContext from "./DataContext";
+import HeaderContext from "./HeaderContext";
 
 const Header = ()=>{
-        const {title} = useContext(DataContext)
+        const {title} = useContext(HeaderContext)
         console.log(`=> Header:  ${title}`)
 
         return (
@@ -23,6 +23,6 @@ const Header = ()=>{
         </header>
         )
     }
-export default React.memo(Header)
+export default React.memo(Header) 
 // Reacr.memo() guide: https://dmitripavlutin.com/use-react-memo-wisely/
 

@@ -1,6 +1,6 @@
 import {useContext, useState} from "react";
 import Item from "./Item"
-import DataContext from "./DataContext";
+import DataContext from "./ListContext";
 
 const columns = {
     checked :{name:"Ch",    compare:(a,b)=>a.checked-b.checked},

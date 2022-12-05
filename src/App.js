@@ -2,7 +2,8 @@ import {useState,useCallback} from "react";
 import './App.css';
 import Header from './Header'
 import List from './List'
-import DataContext from "./DataContext";
+import HeaderContext from "./HeaderContext";
+import ListContext from "./ListContext";
 
 export const callbacks = {}
 
@@ -29,13 +30,13 @@ const App = ()=>{
   console.log(`=> ----------- App ------------`)
   return (
     <div className="App">
-      <DataContext.Provider value={{title, list}}>
-
+      <HeaderContext.Provider value={{title}}>
         <Header/>
+      </HeaderContext.Provider>
 
+      <ListContext.Provider value={{list}}>
         <List/>
-
-      </DataContext.Provider>
+      </ListContext.Provider>
     </div>
   );
 }
