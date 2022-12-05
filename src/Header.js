@@ -1,7 +1,7 @@
 import React from "react";
 import logo from './logo.svg';
 
-export default class Header extends React.Component {
+export default class Header extends React.PureComponent {
     render(){
         const {title} = this.props
         console.log(`=> Header:  ${title}`)
