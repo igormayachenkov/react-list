@@ -35,8 +35,7 @@ export default ({list,onItemClick})=>{
                 .map((item)=>(
                 <Item 
                     key  = {item.id} 
-                    item = {item}
-                    onItemClick={onItemClick}/>
+                    item = {item}/>
             ))}
         </div>
     )

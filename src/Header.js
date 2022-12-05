@@ -22,4 +22,5 @@ const Header = ({title})=>{
         )
     }
 export default React.memo(Header)
+// Reacr.memo() guide: https://dmitripavlutin.com/use-react-memo-wisely/
 
