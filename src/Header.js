@@ -1,9 +1,7 @@
 import React from "react";
 import logo from './logo.svg';
 
-export default class Header extends React.Component {
-    render(){
-        const {title} = this.props
+export default ({title})=>{
         console.log(`=> Header:  ${title}`)
 
         return (
@@ -23,4 +21,3 @@ export default class Header extends React.Component {
         </header>
         )
     }
-}

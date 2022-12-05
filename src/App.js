@@ -1,48 +1,38 @@
-import React from 'react';
+import {useState} from "react";
 import './App.css';
 import Header from './Header'
 import List from './List'
 
-class App extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      title : "Classic",
-      list  : [
+const App = ()=>{
+  const [title, updateTitle] = useState("Functional")
+  const [list, updateList]   = useState([
         {id:1, name:'one',  checked:false},
         {id:2, name:'two',  checked:false},
         {id:3, name:'three',checked:false},
         {id:4, name:'four', checked:false},
-        {id:5, name:'five', checked:false}]
-    }
-    
-  }
+        {id:5, name:'five', checked:false}])
 
-  onItemClick(id){
+  const onItemClick = (id)=>{
     console.log(`onItemClick #${id}`)
     // Toggle item checked
-    let newList = this.state.list.map(
+    let newList = list.map(
       (item) => (item.id === id) ? {...item, checked:!item.checked} : item
     )
-    this.setState({list:newList});
-
-
+    updateList(newList)
   }
 
-  render(){
-    console.log(`=> ----------- App ------------`)
-    return (
-      <div className="App">
+  console.log(`=> ----------- App ------------`)
+  return (
+    <div className="App">
 
-        <Header title={this.state.title}/>
+      <Header title={title}/>
 
-        <List 
-          list={this.state.list}
-          onItemClick={(id)=>this.onItemClick(id)}/>
+      <List 
+        list={list}
+        onItemClick={(id)=>onItemClick(id)}/>
 
-      </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;
