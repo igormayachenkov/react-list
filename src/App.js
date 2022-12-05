@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      title : "Classic",
+      title : "Classic Optimized",
       list  : [
         {id:1, name:'one',  checked:false},
         {id:2, name:'two',  checked:false},
@@ -15,7 +15,7 @@ class App extends React.Component {
         {id:4, name:'four', checked:false},
         {id:5, name:'five', checked:false}]
     }
-    
+    this.onItemClick=this.onItemClick.bind(this)
   }
 
   onItemClick(id){
@@ -38,7 +38,7 @@ class App extends React.Component {
 
         <List 
           list={this.state.list}
-          onItemClick={(id)=>this.onItemClick(id)}/>
+          onItemClick={this.onItemClick}/>
 
       </div>
     );

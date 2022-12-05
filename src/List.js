@@ -7,7 +7,7 @@ const columns = {
     name    :{name:"Name",  compare:(a,b)=>a.name.localeCompare(b.name)},
 }
 
-export default class List extends React.Component{
+export default class List extends React.PureComponent{
     constructor(props){
         super(props)
         this.state = {

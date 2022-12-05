@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class Item extends React.Component {
+export default class Item extends React.PureComponent {
     render(){
         const {onItemClick} = this.props
         const {id,name,checked} = this.props.item
