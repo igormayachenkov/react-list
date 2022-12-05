@@ -1,7 +1,7 @@
 import React from "react";
 import logo from './logo.svg';
 
-export default ({title})=>{
+const Header = ({title})=>{
         console.log(`=> Header:  ${title}`)
 
         return (
@@ -21,3 +21,5 @@ export default ({title})=>{
         </header>
         )
     }
+export default React.memo(Header)
+
