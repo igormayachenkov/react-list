@@ -2,11 +2,12 @@ import {useState,useCallback} from "react";
 import './App.css';
 import Header from './Header'
 import List from './List'
+import DataContext from "./DataContext";
 
 export const callbacks = {}
 
 const App = ()=>{
-  const [title, updateTitle] = useState("Functional Optimized")
+  const [title, updateTitle] = useState("Functional Context")
   const [list,  updateList]  = useState([
         {id:1, name:'one',  checked:false},
         {id:2, name:'two',  checked:false},
@@ -28,11 +29,13 @@ const App = ()=>{
   console.log(`=> ----------- App ------------`)
   return (
     <div className="App">
+      <DataContext.Provider value={{title, list}}>
 
-      <Header title={title}/>
+        <Header/>
 
-      <List list={list}/>
+        <List/>
 
+      </DataContext.Provider>
     </div>
   );
 }

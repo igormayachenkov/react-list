@@ -1,7 +1,9 @@
-import React from "react";
+import React,{useContext} from "react";
 import logo from './logo.svg';
+import DataContext from "./DataContext";
 
-const Header = ({title})=>{
+const Header = ()=>{
+        const {title} = useContext(DataContext)
         console.log(`=> Header:  ${title}`)
 
         return (

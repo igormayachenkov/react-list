@@ -1,5 +1,6 @@
-import {useState} from "react";
+import {useContext, useState} from "react";
 import Item from "./Item"
+import DataContext from "./DataContext";
 
 const columns = {
     checked :{name:"Ch",    compare:(a,b)=>a.checked-b.checked},
@@ -7,7 +8,9 @@ const columns = {
     name    :{name:"Name",  compare:(a,b)=>a.name.localeCompare(b.name)},
 }
 
-export default ({list,onItemClick})=>{
+export default ()=>{
+
+    const {list} = useContext(DataContext)
 
     const [sortby, updateSortby] = useState("id")
 
