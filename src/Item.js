@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({item, onItemClick})=>{
+const Item = ({item, onItemClick})=>{
         const {id,name,checked} = item
         console.log(`=> Item:  ${checked?'*':'-'} #${id} ${name}`)
 
@@ -14,3 +14,5 @@ export default ({item, onItemClick})=>{
             </div>
         )
     }
+
+export default React.memo(Item)
