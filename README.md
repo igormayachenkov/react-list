@@ -9,6 +9,8 @@ Function-based components without any optimization
 
 # branch "cls-opt"
 Class-based components with optimization
+- List,Item: Component => PureComponent
+- App: this.onItemClick => this.onItemClick.bind(this); Constant handler in Item.props 
 
 # branch "fun-opt"
 Function-based components with optimization
