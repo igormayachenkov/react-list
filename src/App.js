@@ -1,9 +1,7 @@
-import {useState,useCallback} from "react";
+import {useState,useCallback,useMemo} from "react";
 import './App.css';
 import Header from './Header'
 import List from './List'
-
-export const callbacks = {}
 
 const App = ()=>{
   const [title, updateTitle] = useState("Functional Optimized")
@@ -13,6 +11,7 @@ const App = ()=>{
         {id:3, name:'three',checked:false},
         {id:4, name:'four', checked:false},
         {id:5, name:'five', checked:false}])
+  const callbacks = useMemo(()=>({}),[])
 
 //  const onItemClick = useCallback((id)=>{       !!! useCallback doesn't work - old list saved !!!
   callbacks.onItemClick = (id)=>{
@@ -31,7 +30,7 @@ const App = ()=>{
 
       <Header title={title}/>
 
-      <List list={list}/>
+      <List list={list} callbacks={callbacks}/>
 
     </div>
   );

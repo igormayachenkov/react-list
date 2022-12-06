@@ -1,7 +1,6 @@
 import React from "react";
-import { callbacks } from "./App";
 
-const Item = ({item})=>{
+const Item = ({item, callbacks})=>{
     const {id,name,checked} = item
     console.log(`=> Item:  ${checked?'*':'-'} #${id} ${name}`)
 

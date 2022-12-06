@@ -7,7 +7,7 @@ const columns = {
     name    :{name:"Name",  compare:(a,b)=>a.name.localeCompare(b.name)},
 }
 
-export default ({list,onItemClick})=>{
+export default ({list,callbacks})=>{
 
     const [sortby, updateSortby] = useState("id")
 
@@ -35,7 +35,8 @@ export default ({list,onItemClick})=>{
                 .map((item)=>(
                 <Item 
                     key  = {item.id} 
-                    item = {item}/>
+                    item = {item}
+                    callbacks = {callbacks}/>
             ))}
         </div>
     )
