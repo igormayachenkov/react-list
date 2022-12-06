@@ -1,5 +1,6 @@
 import {useState} from "react";
 import Item from "./Item"
+import useStore from "./Store";
 
 const columns = {
     checked :{name:"Ch",    compare:(a,b)=>a.checked-b.checked},
@@ -7,7 +8,8 @@ const columns = {
     name    :{name:"Name",  compare:(a,b)=>a.name.localeCompare(b.name)},
 }
 
-export default ({list,onItemClick})=>{
+export default ()=>{
+    const { list, onItemClick } = useStore()
 
     const [sortby, updateSortby] = useState("id")
 
